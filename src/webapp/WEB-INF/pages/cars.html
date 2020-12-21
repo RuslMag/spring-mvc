@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список Автомобилей</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+    <tr>
+        <th> Автомобиль </th>
+        <th> Цвет </th>
+        <th> Серия </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${allCars.isEmpty()}">
+        <td colspan="3"> Не найдено машин</td>
+    </tr>
+    <tr th:each="car : ${allCars}">
+        <td><span th:text="${car.getModel()}"> Car </span></td>
+        <td><span th:text="${car.getColor()}"> Color </span></td>
+        <td><span th:text="${car.getSeries()}"> Series </span></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
